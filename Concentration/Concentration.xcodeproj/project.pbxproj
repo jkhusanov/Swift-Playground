@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC354C922221E79800FDB853 /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC354C912221E79800FDB853 /* Concentration.swift */; };
+		CC354C942221E8AC00FDB853 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC354C932221E8AC00FDB853 /* Card.swift */; };
 		CC9613BC2207897A007F31E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9613BB2207897A007F31E8 /* AppDelegate.swift */; };
 		CC9613BE2207897A007F31E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9613BD2207897A007F31E8 /* ViewController.swift */; };
 		CC9613C12207897A007F31E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9613BF2207897A007F31E8 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC354C912221E79800FDB853 /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
+		CC354C932221E8AC00FDB853 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CC9613B82207897A007F31E8 /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9613BB2207897A007F31E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC9613BD2207897A007F31E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 			children = (
 				CC9613BD2207897A007F31E8 /* ViewController.swift */,
 				CC9613BF2207897A007F31E8 /* Main.storyboard */,
+				CC354C912221E79800FDB853 /* Concentration.swift */,
+				CC354C932221E8AC00FDB853 /* Card.swift */,
 				CC9613CD22078BC5007F31E8 /* Supporting Files */,
 				CC9613C72207897C007F31E8 /* Info.plist */,
 			);
@@ -145,6 +151,8 @@
 			files = (
 				CC9613BE2207897A007F31E8 /* ViewController.swift in Sources */,
 				CC9613BC2207897A007F31E8 /* AppDelegate.swift in Sources */,
+				CC354C922221E79800FDB853 /* Concentration.swift in Sources */,
+				CC354C942221E8AC00FDB853 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
