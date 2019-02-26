@@ -37,7 +37,7 @@ class ViewController: UIViewController {
             output.text = "No values provided" //this probably not going to happen because it will be just empty string
             return
         }
-        //removed all force unwrapped optionals we had
+    
         
         var encoded = ""
         for character in plaintext {
