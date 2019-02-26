@@ -10,21 +10,42 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var inputField: UITextField!
+    @IBOutlet weak var inputField: UITextField! // these "!" are ok only here
     @IBOutlet weak var secretField: UITextField!
     @IBOutlet weak var output: UILabel!
     
+    
+    var integerSecret: UInt32 {
+        guard let secretString = secretField.text else {
+            return 0
+        }
+        
+        // turn string into an integer
+        if let secretInt = UInt32(secretString) {
+            return secretInt
+        } else {
+            return 0
+        }
+        
+    }
 
     @IBAction func encryptButtonPressed(_ sender: Any) {
-        let plaintext = inputField.text!
-        let secretString = secretField.text!
-        
-        let secretInt = UInt32(secretString)! // turn string into an integer
+        guard
+            let plaintext = inputField.text,
+            let secretString = secretField.text //this went up to the integerSecret
+        else {
+            output.text = "No values provided" //this probably not going to happen because it will be just empty string
+            return
+        }
+        //removed all force unwrapped optionals we had
         
         var encoded = ""
         for character in plaintext {
-            let unicode = character.unicodeScalars.first!.value
-            let shiftUniCode = unicode + secretInt
+            guard let firstUnicodeScalar = character.unicodeScalars.first else {
+                continue //just skip this loop iteration, go to next character in plaintext
+            }
+            let unicode = firstUnicodeScalar.value
+            let shiftUniCode = unicode + integerSecret
             let shiftedCharacter = String(UnicodeScalar(UInt8(shiftUniCode)))
             
             encoded += shiftedCharacter
