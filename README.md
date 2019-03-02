@@ -13,6 +13,8 @@ Playground for experiments and learning.
 
 ### 2. [Concentration](https://github.com/jkhusanov/Swift-Playground/tree/master/Concentration) game, simple memorization game.
 
+### 3. [OurButton](https://github.com/jkhusanov/swift-playground/tree/master/OurButton) simple delegation example
+
 #### Feedback
 
 In case you have any feedback or questions, feel free to open a new issue on this repo or reach out to me [**@jkhusanov**](https://github.com/jkhusanov).
