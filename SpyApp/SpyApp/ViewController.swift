@@ -8,6 +8,31 @@
 
 import UIKit
 
+protocol CipherProtocol {
+    func encrypt(plaintext: String, secret: String) -> String
+}
+
+struct CesarCipher: CipherProtocol {
+    func encrypt(plaintext: String, secret: String) -> String {
+        // turn string into an integer
+        guard let secretInt = UInt32(secret) else {
+            return "Error"
+        }
+        var encoded = ""
+        for character in plaintext {
+            guard let firstUnicodeScalar = character.unicodeScalars.first else {
+                continue
+            }
+            let unicode = firstUnicodeScalar.value
+            let shiftedUnicode = unicode + secretInt
+            let shiftedCharacter = String(UnicodeScalar(UInt8(shiftedUnicode)))
+            
+            encoded += shiftedCharacter
+        }
+        return encoded
+    }
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var inputField: UITextField! // these "!" are ok only here
@@ -15,20 +40,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var output: UILabel!
     
     
-    var integerSecret: UInt32 {
-        guard let secretString = secretField.text else {
-            return 0
-        }
-        
-        // turn string into an integer
-        if let secretInt = UInt32(secretString) {
-            return secretInt
-        } else {
-            return 0
-        }
-        
-    }
-
+ 
+    var cipher: CipherProtocol = CesarCipher()
+    
+    var ciphers: [String: CipherProtocol] = [
+        "Cesar": CesarCipher()
+        // Add other ciphers here
+    ]
     @IBAction func encryptButtonPressed(_ sender: Any) {
         guard
             let plaintext = inputField.text,
@@ -37,21 +55,22 @@ class ViewController: UIViewController {
             output.text = "No values provided" //this probably not going to happen because it will be just empty string
             return
         }
-    
-        
-        var encoded = ""
-        for character in plaintext {
-            guard let firstUnicodeScalar = character.unicodeScalars.first else {
-                continue //just skip this loop iteration, go to next character in plaintext
-            }
-            let unicode = firstUnicodeScalar.value
-            let shiftUniCode = unicode + integerSecret
-            let shiftedCharacter = String(UnicodeScalar(UInt8(shiftUniCode)))
-            
-            encoded += shiftedCharacter
-        }
-        output.text = encoded
+
+        output.text = cipher.encrypt(plaintext: plaintext, secret: secretString)
     }
+    
+    
+    @IBAction func cipherSelected(_ sender: UIButton) {
+        guard let buttonTitle = sender.titleLabel?.text else{
+            return
+        }
+        guard let selectedCipher = ciphers[buttonTitle] else {
+            return
+        }
+        cipher = selectedCipher
+        
+    }
+    
     
 }
 

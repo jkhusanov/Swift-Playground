@@ -9,11 +9,11 @@ Playground for experiments and learning.
 
 ## Projects
 
-### 1. [SpyApp](https://github.com/jkhusanov/Swift-Playground/tree/master/SpyApp) simple the Caesar cipher app.
+### 1. [SpyApp](https://github.com/jkhusanov/Swift-Playground/tree/master/SpyApp) simple the Caesar cipher app. SFSU
 
-### 2. [Concentration](https://github.com/jkhusanov/Swift-Playground/tree/master/Concentration) game, simple memorization game.
+### 2. [Concentration](https://github.com/jkhusanov/Swift-Playground/tree/master/Concentration) game, simple memorization game. Stanford
 
-### 3. [OurButton](https://github.com/jkhusanov/swift-playground/tree/master/OurButton) simple delegation example
+### 3. [OurButton](https://github.com/jkhusanov/swift-playground/tree/master/OurButton) simple delegation example. SFSU
 
 #### Feedback
 
